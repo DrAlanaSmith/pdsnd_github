@@ -10,6 +10,16 @@ VALID_MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'all']
 VALID_DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
 VALID_ANSWER = ['yes', 'no']
 
+def get_yes_no() -> bool:
+    while True:
+        answer = input().lower()
+        if answer.startswith('y'):
+            return True
+        if answer.startswith('n'):
+            return False
+        else: 
+            print("Invalid input. Please type yes or no.")
+
 #get input filters from user
 def get_filters():
     """
@@ -98,16 +108,9 @@ def time_stats(df):
     
     #ask user if they want to see data
     print('Would you like to see travel time statistics? Yes or no')
-    input_valid = False
-    while not input_valid: 
-        answer = input()
-        answer = answer.lower()
-        if answer in VALID_ANSWER:
-            input_valid = True
-        else:
-            print('Invalid answer, please try again')    
 
-    if answer == 'yes':
+
+    if get_yes_no():
         print('\nCalculating The Most Frequent Times of Travel...\n')
         start_time = time.time()
 
