@@ -255,7 +255,8 @@ def user_stats(df):
 
         print("\nThis took %s seconds." % (round(time.time() - start_time, 2)))
         print('-'*40)
-
+    
+    #display 5 lines of data at user's request
     def display_data(df):
 
         i = 0
