@@ -136,16 +136,8 @@ def station_stats(df):
     
     #ask user if they want to see data
     print('Would you like to see station statistics? Yes or no')
-    input_valid = False
-    while not input_valid: 
-        answer = input()
-        answer = answer.lower()
-        if answer in VALID_ANSWER:
-            input_valid = True
-        else:
-            print('Invalid answer, please try again')    
 
-    if answer == 'yes':
+    if get_yes_no():
         print('\nCalculating The Most Popular Stations and Trip...\n')
         start_time = time.time()
 
@@ -172,16 +164,7 @@ def trip_duration_stats(df):
     
     #ask user if they want to see data
     print('Would you like to see trip duration statistics? Yes or no')
-    input_valid = False
-    while not input_valid: 
-        answer = input()
-        answer = answer.lower()
-        if answer in VALID_ANSWER:
-            input_valid = True
-        else:
-            print('Invalid answer, please try again')    
-
-    if answer == 'yes':
+    if get_yes_no():
         print('\nCalculating Trip Duration...\n')
         start_time = time.time()
 
@@ -218,16 +201,7 @@ def user_stats(df):
     
     #ask user if they want to see data
     print('Would you like to see user statistics? Yes or no')
-    input_valid = False
-    while not input_valid: 
-        answer = input()
-        answer = answer.lower()
-        if answer in VALID_ANSWER:
-            input_valid = True
-        else:
-            print('Invalid answer, please try again')    
-
-    if answer == 'yes':
+    if get_yes_no():
         print('\nCalculating User Stats...\n')
         start_time = time.time()
 
